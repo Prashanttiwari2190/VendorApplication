@@ -1,0 +1,12 @@
+<Project>
+
+<!-- https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2017 -->
+    <PropertyGroup>
+        <CodeAnalysisRuleSet>../../codeanalysis.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+    </PropertyGroup>
+</Project>

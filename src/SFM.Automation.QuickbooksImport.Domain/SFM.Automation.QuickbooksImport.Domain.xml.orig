@@ -1,0 +1,362 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SFM.Automation.QuickbooksImport.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.AssemblyMarker">
+            <summary>
+              A well-known marker class used for assembly discovery.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId">
+            <summary>
+              An injectable correlation id, provided by the client as an http header and registered in the container by the
+              hosting process.
+            </summary>
+            <remarks>Classes can inject the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> class to obtain the value.</remarks>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.HttpHeaderName">
+            <summary>
+              The correlation id header name.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.#ctor(System.Guid)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> class.
+            </summary>
+            <param name="value">The value of the correlation id.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.Value">
+            <summary>
+              Gets the value of the correlation identifier.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.ToString">
+            <summary>
+              Returns a string representation of the object.
+            </summary>
+            <returns>A string representation of the object.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Correlation.IAmCorrelatable">
+            <summary>
+              A marker interface that indicates a request can be correlated across services using a unique identifier.
+            </summary>
+            <remarks>The client of a given service is responsible for creating the correlation identifier.</remarks>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Correlation.IAmCorrelatable.CorrelationId">
+            <summary>
+              Gets the correlation identifier for the request.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Bill_Amount">
+            <summary>
+              Gets or sets the Bill_Amount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Bill_date">
+            <summary>
+              Gets or sets the Bill_date.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Bill_No">
+            <summary>
+              Gets or sets the Bill_No.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Category">
+            <summary>
+              Gets or sets the Category.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Category_Description">
+            <summary>
+              Gets or sets the Category_Description.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Customer">
+            <summary>
+              Gets or sets the Customer.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Due_date">
+            <summary>
+              Gets or sets the Due_date.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Id">
+            <summary>
+              Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Terms">
+            <summary>
+              Gets or sets the Terms.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Txn_date">
+            <summary>
+              Gets or sets the Customer.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Vendor">
+            <summary>
+              Gets or sets the Vendor.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData.Vendor_Mailing_Address">
+            <summary>
+              Gets or sets the Vendor_Mailing_Address.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder">
+=======
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder">
+>>>>>>> Stashed changes
+            <summary>
+              A Work Order.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.CompletedAt">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.CompletedAt">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the CompletedAt.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.CreatedAt">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.CreatedAt">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Created_at.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Description">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Description">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Description.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Discount">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Discount">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Discount.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.DiscountPercentage">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.DiscountPercentage">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the DiscountPercentage.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.DiscountType">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.DiscountType">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the DiscountType.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Id">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Id">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the WorkOrderKY.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Number">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Number">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Number.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Purchase_Order_Number">
+            <summary>
+              Gets or sets the purchase_order_number.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax1">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax1.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax1Percentage">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1Percentage">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax1percentage.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax1Type">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1Type">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax1Type.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax2">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax2.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax2Percentage">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2Percentage">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax2percentage.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Tax2Type">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2Type">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Tax2Type.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.Total_Amount">
+            <summary>
+              Gets or sets the Total_Amount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.UpdatedAt">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.UpdatedAt">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the Updated_at.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.VehicleId">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VehicleId">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the VehicleKY.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.VehicleName">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VehicleName">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the VehicleName.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.VendorId">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VendorId">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the VendorKY.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.VendorName">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VendorName">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the VendorName.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.WorkOrderId">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.WorkOrderId">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the WorkOrderId.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder.WorkOrderStatusName">
+=======
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.WorkOrderStatusName">
+>>>>>>> Stashed changes
+            <summary>
+              Gets or sets the WorkOrderStatusName.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IQuickBookDataRepository.InsertQuickBooksData(System.Collections.Generic.IEnumerable{SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData})">
+            <summary>
+              Inserts a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData"/> objects into the repository.
+            </summary>
+            <param name="workOrderData">A list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.QuickBooksData"/> objects to insert.</param>
+            <returns>Returns a Task.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Repositories.IWorkOrderRepository">
+            <summary>
+              A repository for managing <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder"/> objects.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IWorkOrderRepository.InsertWorkOrder(System.Collections.Generic.IEnumerable{SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder})">
+            <summary>
+              Inserts a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder"/> objects into the repository.
+            </summary>
+            <param name="workOrderData">A list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder"/> objects to insert.</param>
+            <returns>Returns a Task.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Services.IWorkOrderService">
+            <summary>
+              A service used to locate WorkOrder information from fleetio.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Services.IWorkOrderService.GetAllWorkOrders">
+            <summary>
+              Gets a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder"/> objects.
+=======
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService">
+            <summary>
+              A service used to locate <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> information from fleetio.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService.GetAllWorkOrders">
+            <summary>
+              Gets a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects.
+>>>>>>> Stashed changes
+            </summary>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+    </members>
+</doc>

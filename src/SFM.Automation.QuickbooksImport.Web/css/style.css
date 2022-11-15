@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+.nav-link {
+    color: #76769b;
+}
+
+.mainWrapper {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    position: relative;
+    background-image: url('../images/bgImg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.formSection {
+    width: 100%;
+    height: 100%;
+}
+
+.formSection .formWrapper .heading h2 {
+    font-size: 56px;
+    margin-bottom: 0;
+    color: #4d4c4e;
+}
+
+.formSection .formWrapper .heading p {
+    font-size: 16px;
+    color: #212529;
+}
+
+.formSection .formWrapper .loginForm  {
+    padding: 3rem 0;
+}
+
+.formSection .formWrapper .loginForm .form-control {
+    border: 0;
+    box-shadow: 0 8px 10px 5px rgb(119 119 158 / 10%);
+    height: 55px;
+}
+
+.forgotLink {
+    text-decoration: none;
+}
+
+button.btn.submitBtn {
+    display: block;
+    width: 100%;
+    background: #76769b;
+    color: #FFF;
+    font-size: 1rem;
+    box-shadow: 0px 0px 10px 5px rgb(77 76 78 / 15%);
+    transition: all 0.3s ease-in-out;
+}
+
+button.btn.submitBtn:hover {
+    background: #FFF;
+    color: #76769b;
+}
+
+.formSection .card {
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px rgb(77 76 78 / 10%);
+    margin: 2.5rem 0;
+}
+
+.formSection .card .card-body {
+    padding: 1.5rem;
+}

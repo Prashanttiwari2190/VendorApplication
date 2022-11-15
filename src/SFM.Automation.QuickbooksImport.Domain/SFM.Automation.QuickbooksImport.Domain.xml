@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SFM.Automation.QuickbooksImport.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.AssemblyMarker">
+            <summary>
+              A well-known marker class used for assembly discovery.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId">
+            <summary>
+              An injectable correlation id, provided by the client as an http header and registered in the container by the
+              hosting process.
+            </summary>
+            <remarks>Classes can inject the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> class to obtain the value.</remarks>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.HttpHeaderName">
+            <summary>
+              The correlation id header name.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.#ctor(System.Guid)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> class.
+            </summary>
+            <param name="value">The value of the correlation id.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.Value">
+            <summary>
+              Gets the value of the correlation identifier.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId.ToString">
+            <summary>
+              Returns a string representation of the object.
+            </summary>
+            <returns>A string representation of the object.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Correlation.IAmCorrelatable">
+            <summary>
+              A marker interface that indicates a request can be correlated across services using a unique identifier.
+            </summary>
+            <remarks>The client of a given service is responsible for creating the correlation identifier.</remarks>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Correlation.IAmCorrelatable.CorrelationId">
+            <summary>
+              Gets the correlation identifier for the request.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder">
+            <summary>
+              A Work Order.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Accounting_date">
+            <summary>
+              Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.CompletedAt">
+            <summary>
+              Gets or sets the CompletedAt.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.CreatedAt">
+            <summary>
+              Gets or sets the Created_at.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Description">
+            <summary>
+              Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Discount">
+            <summary>
+              Gets or sets the Discount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.DiscountPercentage">
+            <summary>
+              Gets or sets the DiscountPercentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.DiscountType">
+            <summary>
+              Gets or sets the DiscountType.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Id">
+            <summary>
+              Gets or sets the WorkOrderKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.IssuedAt">
+            <summary>
+              Gets or sets the Issued_At.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Number">
+            <summary>
+              Gets or sets the Number.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.PurchaseOrderNumber">
+            <summary>
+              Gets or sets the Purchase Order Number.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1">
+            <summary>
+              Gets or sets the Tax1.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1Percentage">
+            <summary>
+              Gets or sets the Tax1percentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax1Type">
+            <summary>
+              Gets or sets the Tax1Type.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2">
+            <summary>
+              Gets or sets the Tax2.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2Percentage">
+            <summary>
+              Gets or sets the Tax2percentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.Tax2Type">
+            <summary>
+              Gets or sets the Tax2Type.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.TotalAmount">
+            <summary>
+              Gets or sets the Total_Amount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.UpdatedAt">
+            <summary>
+              Gets or sets the Updated_at.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VehicleId">
+            <summary>
+              Gets or sets the VehicleKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VehicleName">
+            <summary>
+              Gets or sets the VehicleName.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VendorId">
+            <summary>
+              Gets or sets the VendorKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.VendorName">
+            <summary>
+              Gets or sets the VendorName.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.WorkOrderId">
+            <summary>
+              Gets or sets the WorkOrderId.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder.WorkOrderStatusName">
+            <summary>
+              Gets or sets the WorkOrderStatusName.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Models.VendorLogin">
+            <summary>
+              A Work Order.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.VendorLogin.Password">
+            <summary>
+              Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.VendorLogin.UserName">
+            <summary>
+              Gets or sets the VehicleName.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.VendorLogin.VendorId">
+            <summary>
+              Gets or sets the VendorKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Domain.Models.VendorLogin.VendorName">
+            <summary>
+              Gets or sets the VendorName.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Repositories.IFleetioWorkOrderRepository">
+            <summary>
+              A repository for managing <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IFleetioWorkOrderRepository.InsertWorkOrder(System.Collections.Generic.IEnumerable{SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder})">
+            <summary>
+              Inserts a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects into the repository.
+            </summary>
+            <param name="workOrders">A list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects to insert.</param>
+            <returns>Returns a Task.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Repositories.IVendorLoginRepository">
+            <summary>
+              A repository for managing <see cref="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IVendorLoginRepository.VendorLogin(System.String,System.String)"/> objects.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IVendorLoginRepository.VendorLogin(System.String,System.String)">
+            <summary>
+              Inserts a list of <see cref="M:SFM.Automation.QuickbooksImport.Domain.Repositories.IVendorLoginRepository.VendorLogin(System.String,System.String)"/> objects into the repository.
+            </summary>
+            <param name="userName">userName.</param>
+            <param name="password">password.</param>
+            <returns>Returns a Task.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService">
+            <summary>
+              A service used to locate <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> information from fleetio.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService.GetAllWorkOrders">
+            <summary>
+              Gets a list of <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects.
+            </summary>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+    </members>
+</doc>

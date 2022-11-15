@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SFM.Automation.QuickbooksImport.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.AssemblyMarker">
+            <summary>
+              A well-known marker class used for assembly discovery.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.AutoMapper.Profiles.WorkOrderProfile">
+            <summary>
+              An AutoMapper profile for <see cref="T:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder"/> objects.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.AutoMapper.Profiles.WorkOrderProfile.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.AutoMapper.Profiles.WorkOrderProfile"/> class.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.ConnectionStrings">
+            <summary>
+              A static helper class for dealing with connection strings.
+            </summary>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Data.ConnectionStrings.QuickbooksImport">
+            <summary>
+              Defines the name of the Soar Retail database.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.ConnectionStrings.GetDatabaseName(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+              This method used by the data migrations.
+            </summary>
+            <param name="configuration">An <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object containing the application configuration.</param>
+            <returns>Returns the name of the default database.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.ConnectionStrings.GetDatabaseServerConnectionString(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+              This method used by the data migrations.
+            </summary>
+            <param name="configuration">An <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object containing the application configuration.</param>
+            <returns>Returns the connection string for the master database.</returns>
+        </member>
+<<<<<<< Updated upstream
+        <member name="T:SFM.Automation.QuickbooksImport.Data.DataContext.IDataContext">
+            <summary>
+              A Marker interface to identify a data context.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.DataContext.IFleetioDataContext">
+            <summary>
+              A <see cref="T:SFM.Automation.QuickbooksImport.Data.DataContext.IDataContext"/> for the Fleetio database.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.ISqlConnection`1">
+            <summary>
+              A connection for the specified <typeparamref name="TDataContext"/>.
+            </summary>
+            <typeparam name="TDataContext">The <see cref="T:SFM.Automation.QuickbooksImport.Data.DataContext.IDataContext"/> to use for the connection.</typeparam>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.ISqlConnection`1.Value">
+            <summary>
+              Gets the <see cref="T:System.Data.SqlClient.SqlConnection"/> that the repository will use.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Migrations.Migration_2021022201">
+            <summary>
+              Creates the Fact_Contact Reminders database table.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Migrations.Migration_2021022201.Up">
+            <summary>
+              Creates the Fact_Contact_Reminders database table.
+            </summary>
+        </member>
+=======
+>>>>>>> Stashed changes
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Migrations.Migration__InitialSchema">
+            <summary>
+              The initial database migration.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Migrations.Migration__InitialSchema.Up">
+            <summary>
+              The script to migrate the database to the current version.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Migrator">
+            <summary>
+              The class that is responsible for running data migrations.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Migrator.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{SFM.Automation.QuickbooksImport.Data.Migrator},FluentMigrator.Runner.IMigrationRunner)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.Migrator"/> class.
+            </summary>
+            <param name="configuration">The application configuration settings.</param>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger"/> to use for logging.</param>
+            <param name="migrationRunner">The migration runner.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Migrator.RunMigrations">
+            <summary>
+              Runs all new migrations.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder">
+            <summary>
+              A Work Order model from the Fleetio Api.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.CompletedAt">
+            <summary>
+              Gets or sets the CompletedAt.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.CreatedAt">
+            <summary>
+              Gets or sets the Created_at.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Description">
+            <summary>
+              Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Discount">
+            <summary>
+              Gets or sets the Discount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.DiscountPercentage">
+            <summary>
+              Gets or sets the DiscountPercentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.DiscountType">
+            <summary>
+              Gets or sets the DiscountType.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Id">
+            <summary>
+              Gets or sets the WorkOrderKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Number">
+            <summary>
+              Gets or sets the Number.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Purchase_Order_Number">
+            <summary>
+              Gets or sets the purchase_order_number.
+            </summary>
+        </member>
+=======
+>>>>>>> Stashed changes
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax1">
+            <summary>
+              Gets or sets the Tax1.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax1Percentage">
+            <summary>
+              Gets or sets the Tax1percentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax1Type">
+            <summary>
+              Gets or sets the Tax1Type.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax2">
+            <summary>
+              Gets or sets the Tax2.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax2Percentage">
+            <summary>
+              Gets or sets the Tax2percentage.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Tax2Type">
+            <summary>
+              Gets or sets the Tax2Type.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.Total_Amount">
+            <summary>
+              Gets or sets the Total_Amount.
+            </summary>
+        </member>
+=======
+>>>>>>> Stashed changes
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.UpdatedAt">
+            <summary>
+              Gets or sets the Updated_at.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.VehicleId">
+            <summary>
+              Gets or sets the VehicleKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.VehicleName">
+            <summary>
+              Gets or sets the VehicleName.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.VendorId">
+            <summary>
+              Gets or sets the VendorKY.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.VendorName">
+            <summary>
+              Gets or sets the VendorName.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.WorkOrderId">
+            <summary>
+              Gets or sets the WorkOrderId.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder.WorkOrderStatusName">
+            <summary>
+              Gets or sets the WorkOrderStatusName.
+            </summary>
+        </member>
+<<<<<<< Updated upstream
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Bill_Amount">
+            <summary>
+              Gets or sets the Bill_Amount.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Bill_date">
+            <summary>
+              Gets or sets the Bill_date.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Bill_No">
+            <summary>
+              Gets or sets the Bill_No.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Category">
+            <summary>
+              Gets or sets the Category.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Category_Description">
+            <summary>
+              Gets or sets the Category_Description.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Customer">
+            <summary>
+              Gets or sets the Customer.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Due_date">
+            <summary>
+              Gets or sets the Due_date.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Id">
+            <summary>
+              Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Terms">
+            <summary>
+              Gets or sets the Terms.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Txn_date">
+            <summary>
+              Gets or sets the Customer.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Vendor">
+            <summary>
+              Gets or sets the Vendor.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Data.Models.QuickBook.QuickBookData.Vendor_Mailing_Address">
+            <summary>
+              Gets or sets the Vendor_Mailing_Address.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Repositories.SqlQuickBooksDataRepository.#ctor(SFM.Automation.QuickbooksImport.Data.ISqlConnection{SFM.Automation.QuickbooksImport.Data.DataContext.IFleetioDataContext})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.Repositories.SqlQuickBooksDataRepository"/> class.
+            </summary>
+            <param name="cnn">The connection to the database to use.</param>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.SqlWorkOrdersRepository">
+            <summary>
+              A Sql based implementation of the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Repositories.IWorkOrderRepository"/> interface.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.SqlWorkOrdersRepository.#ctor(SFM.Automation.QuickbooksImport.Data.ISqlConnection{SFM.Automation.QuickbooksImport.Data.DataContext.IFleetioDataContext})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.SqlWorkOrdersRepository"/> class.
+            </summary>
+            <param name="cnn">The connection to the database to use.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.SqlWorkOrdersRepository.InsertWorkOrder(System.Collections.Generic.IEnumerable{SFM.Automation.QuickbooksImport.Domain.Models.WorkOrder})">
+            <inheritdoc/>
+        </member>
+=======
+>>>>>>> Stashed changes
+        <member name="T:SFM.Automation.QuickbooksImport.Data.ServiceCollectionExtensions">
+            <summary>
+              Extension methods for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> used to register dependencies with the IoC container.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.ServiceCollectionExtensions.AddDataServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+              Registers all the application layer dependencies with the IoC container.
+            </summary>
+            <param name="services">The container service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The populated <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+<<<<<<< Updated upstream
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Services.HttpWorkOrderService">
+            <summary>
+              An HTTP implementation of the <see cref="T:SFM.Automation.QuickbooksImport.Data.IWorkOrderService"/> interface.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Services.HttpWorkOrderService.#ctor(System.Net.Http.HttpClient,AutoMapper.IMapper)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.Services.HttpWorkOrderService"/> class.
+=======
+        <member name="T:SFM.Automation.QuickbooksImport.Data.Services.HttpFleetioWorkOrderService">
+            <summary>
+              An HTTP implementation of the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService"/> interface.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Services.HttpFleetioWorkOrderService.#ctor(System.Net.Http.HttpClient,AutoMapper.IMapper)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Data.Services.HttpFleetioWorkOrderService"/> class.
+>>>>>>> Stashed changes
+            </summary>
+            <param name="client">A pre-configured <see cref="T:System.Net.Http.HttpClient"/> used to access the Fleetio API.</param>
+            <param name="mapper">An Automapper <see cref="T:AutoMapper.IMapper"/> instance.</param>
+        </member>
+<<<<<<< Updated upstream
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Services.HttpWorkOrderService.GetAllWorkOrders">
+            <inheritdoc/>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Data.IWorkOrderService">
+            <summary>
+              A service used to locate WorkOrder information from fleetio.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Data.IWorkOrderService.GetAllWorkOrders">
+            <summary>
+              Gets a list of <see cref="T:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder"/> objects.
+            </summary>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+=======
+        <member name="M:SFM.Automation.QuickbooksImport.Data.Services.HttpFleetioWorkOrderService.GetAllWorkOrders">
+            <inheritdoc/>
+        </member>
+>>>>>>> Stashed changes
+    </members>
+</doc>

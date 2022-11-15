@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFM.Automation.QuickbooksImport.Web", "src\SFM.Automation.QuickbooksImport.Web\SFM.Automation.QuickbooksImport.Web.csproj", "{809B4DF1-6A1E-40EA-88A5-01BE740474EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{905C4086-811C-4A8B-922B-22CF89E470AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9B72E928-AE1B-46F1-9924-FA659F8369BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2475E212-1EAD-4A0C-907F-AC10F3DF2869}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFM.Automation.QuickbooksImport.Domain", "src\SFM.Automation.QuickbooksImport.Domain\SFM.Automation.QuickbooksImport.Domain.csproj", "{EAADEAB6-AF91-432D-BD24-9F0E6726DC67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFM.Automation.QuickbooksImport.Application", "src\SFM.Automation.QuickbooksImport.Application\SFM.Automation.QuickbooksImport.Application.csproj", "{2D209B61-22FE-429C-B7A4-C62D97812782}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFM.Automation.QuickbooksImport.Data", "src\SFM.Automation.QuickbooksImport.Data\SFM.Automation.QuickbooksImport.Data.csproj", "{6FE10E61-BD71-4A22-9741-4A324F2A58C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFM.Automation.QuickbooksImport.Cli", "SFM.Automation.QuickbooksImport.Cli\SFM.Automation.QuickbooksImport.Cli.csproj", "{B834600D-A161-4919-A954-BBF294FBC2DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{809B4DF1-6A1E-40EA-88A5-01BE740474EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809B4DF1-6A1E-40EA-88A5-01BE740474EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809B4DF1-6A1E-40EA-88A5-01BE740474EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809B4DF1-6A1E-40EA-88A5-01BE740474EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAADEAB6-AF91-432D-BD24-9F0E6726DC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAADEAB6-AF91-432D-BD24-9F0E6726DC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAADEAB6-AF91-432D-BD24-9F0E6726DC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAADEAB6-AF91-432D-BD24-9F0E6726DC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D209B61-22FE-429C-B7A4-C62D97812782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D209B61-22FE-429C-B7A4-C62D97812782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D209B61-22FE-429C-B7A4-C62D97812782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D209B61-22FE-429C-B7A4-C62D97812782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE10E61-BD71-4A22-9741-4A324F2A58C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE10E61-BD71-4A22-9741-4A324F2A58C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE10E61-BD71-4A22-9741-4A324F2A58C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE10E61-BD71-4A22-9741-4A324F2A58C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B834600D-A161-4919-A954-BBF294FBC2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B834600D-A161-4919-A954-BBF294FBC2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B834600D-A161-4919-A954-BBF294FBC2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B834600D-A161-4919-A954-BBF294FBC2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{809B4DF1-6A1E-40EA-88A5-01BE740474EA} = {905C4086-811C-4A8B-922B-22CF89E470AD}
+		{EAADEAB6-AF91-432D-BD24-9F0E6726DC67} = {905C4086-811C-4A8B-922B-22CF89E470AD}
+		{2D209B61-22FE-429C-B7A4-C62D97812782} = {905C4086-811C-4A8B-922B-22CF89E470AD}
+		{6FE10E61-BD71-4A22-9741-4A324F2A58C3} = {905C4086-811C-4A8B-922B-22CF89E470AD}
+		{B834600D-A161-4919-A954-BBF294FBC2DB} = {905C4086-811C-4A8B-922B-22CF89E470AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37491CE3-2653-45A1-B296-EBF9407FC7F0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+﻿{
+  "connectionStrings": {
+    "DB": "Server=localhost;User Id=sa;Password=W00dstock1;Initial Catalog=Services.Billing;Application Name=Edf.Services.Billing.IntegrationTests",
+    "LegacyDb": "Server=localhost;User Id=sa;Password=W00dstock1;Initial Catalog=Services.Billing.Legacy;Enlist=True;MultipleActiveResultSets=True;Application Name=Edf.Services.Billing.IntegrationTests"
+  },
+
+  "RecreateDB": false
+}

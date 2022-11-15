@@ -1,0 +1,8 @@
+<<<<<<< Updated upstream
+﻿@using SFM.Automation.QuickbooksImport.Domain;
+@using SFM.Automation.QuickbooksImport.Data;
+=======
+﻿@using SFM.Automation.QuickbooksImport
+@using SFM.Automation.QuickbooksImport.Web.Models
+>>>>>>> Stashed changes
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

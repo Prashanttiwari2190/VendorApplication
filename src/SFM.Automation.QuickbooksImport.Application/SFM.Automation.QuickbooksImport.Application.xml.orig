@@ -1,0 +1,552 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SFM.Automation.QuickbooksImport.Application</name>
+    </assembly>
+    <members>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.AssemblyMarker">
+            <summary>
+              A well-known marker class used for assembly discovery.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken">
+            <summary>
+              A token providing details of the user making the request.
+            </summary>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.Anonymous">
+            <summary>
+              Represents an anonymous user.
+            </summary>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.Fake">
+            <summary>
+              A Fake that can be used when authentication is disabled.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.#ctor(System.String,System.String,System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken"/> class.
+            </summary>
+            <param name="userId">The immutable user id, typically their email.</param>
+            <param name="userName">The name of the user.</param>
+            <param name="jwt">The raw JWT authentication token.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.IsAnonymous">
+            <summary>
+              Gets a value indicating whether the user is anonymous.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.IsAuthenticated">
+            <summary>
+              Gets a value indicating whether the user is authenticated.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.Jwt">
+            <summary>
+              Gets the encoded jwt identity token for the current user.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.UserId">
+            <summary>
+              Gets the immutable id of the logged in user.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.UserName">
+            <summary>
+              Gets the name of the user.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.Equals(SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken)">
+            <summary>
+              Gets a value indicating whether this object is equivalent to another.
+            </summary>
+            <param name="other">The object to compare with this object.</param>
+            <returns>True if the two objects are equivalent; otherwise, false.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.Equals(System.Object)">
+            <summary>
+              Gets a value indicating whether this object is equivalent to another.
+            </summary>
+            <param name="other">The object to compare with this object.</param>
+            <returns>True if the two objects are equivalent; otherwise, false.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken.GetHashCode">
+            <summary>
+              Gets a quasi-unique hash code for the object.
+            </summary>
+            <returns>A quasi-unique hash code.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData">
+            <summary>
+              A class that holds authorization data for the current request.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData"/> class.
+            </summary>
+            <param name="userId">An immutable identifier for the user, typically their email.</param>
+            <param name="userName">The name of the user.</param>
+            <param name="roles">The roles bestowed to the user for the current request.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.Roles">
+            <summary>
+              Gets the roles bestowed to the user.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.UserId">
+            <summary>
+              Gets the immutable user id, typically their email.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.UserName">
+            <summary>
+              Gets the name of the user.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.HasRole(System.String)">
+            <summary>
+              Gets a value indicating whether the grant has been bestowed to the user.
+            </summary>
+            <param name="type">The grant type.</param>
+            <returns>True if the grant is in effect; otherwise, false.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.IsAuthorized(System.String)">
+            <summary>
+              Gets a value indicating whether the user is authorized to perform the specified activity.
+            </summary>
+            <param name="activityName">The name of the activity.</param>
+            <returns>True if the user is authorized to perform the activity; otherwise, false.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData.ToString">
+            <summary>
+              Returns the current user information as a string.
+            </summary>
+            <returns>The current user information as a string.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider">
+            <summary>
+              An application service that wraps the authorization api.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider.#ctor(SFM.Automation.QuickbooksImport.Application.Authentication.AuthenticationToken,System.Net.Http.HttpClient)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider"/> class.
+            </summary>
+            <param name="authenticationToken">The authentication token for the current user.</param>
+            <param name="client">The http client configured with the authorization service endpoint.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider.AuthenticationToken">
+            <summary>
+              Gets the authentication token for the current user.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider.Client">
+            <summary>
+              Gets the http client configured with the authorization service endpoint.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationDataProvider.GetAuthorizationData">
+            <summary>
+              Gets the <see cref="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData"/> applicable for the current application, tenant, and user.
+            </summary>
+            <returns>Returns <see cref="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData"/>.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Authorization.IAuthorizationDataProvider">
+            <summary>
+              The interface that defines a contract for obtaining authorization data for the current user.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Authorization.IAuthorizationDataProvider.GetAuthorizationData">
+            <summary>
+              Gets the authorization data for the current user.
+            </summary>
+            <returns>Returns <see cref="T:SFM.Automation.QuickbooksImport.Application.Authorization.AuthorizationData"/>.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Authorization.IRequireAuthorization">
+            <summary>
+              The interface that defines a contract for commands and queries that must be authorized (i.e. those for which
+              the current user must have an Activity grant).
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Authorization.IRequireAuthorization.AuthorizationData">
+            <summary>
+              Gets or sets the <see cref="P:SFM.Automation.QuickbooksImport.Application.Authorization.IRequireAuthorization.AuthorizationData"/> for the request.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Behaviors.AuthorizationBehavior`2">
+            <summary>
+              A behavior used to authorize requests.
+            </summary>
+            <typeparam name="TRequest">The type of request.</typeparam>
+            <typeparam name="TResponse">The type of response.</typeparam>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Application.Behaviors.AuthorizationBehavior`2.authorizationDataProvider">
+            <summary>
+              The provider used to obtain authorization data for the current user.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.AuthorizationBehavior`2.#ctor(SFM.Automation.QuickbooksImport.Application.Authorization.IAuthorizationDataProvider)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Behaviors.AuthorizationBehavior`2"/> class.
+            </summary>
+            <param name="authorizationDataProvider">The provider used to obtain authorization data for current user.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.AuthorizationBehavior`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <summary>
+              Authorizes the current request, or throws <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/>.
+            </summary>
+            <param name="request">The request to authorize.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <param name="next">The next request in the pipeline.</param>
+            <returns>The response from the request handler.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Behaviors.LoggingBehavior`2">
+            <summary>
+              A behavior used to log requests and any exceptions that occur.
+            </summary>
+            <typeparam name="TRequest">The type of request.</typeparam>
+            <typeparam name="TResponse">The type of response.</typeparam>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.LoggingBehavior`2.#ctor(Microsoft.Extensions.Logging.ILogger{SFM.Automation.QuickbooksImport.Application.Behaviors.LoggingBehavior{`0,`1}})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Behaviors.LoggingBehavior`2"/> class.
+            </summary>
+            <param name="logger">The diagnostic logger to use.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.LoggingBehavior`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <summary>
+              Logs the current request, as well as any exception that may occur.
+            </summary>
+            <param name="request">The request to authorize.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <param name="next">The next request in the pipeline.</param>
+            <returns>The response from the request handler.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Behaviors.ValidateBehavior`2">
+            <summary>
+              A behavior used to validate requests.
+            </summary>
+            <typeparam name="TRequest">The type of request.</typeparam>
+            <typeparam name="TResponse">The type of response.</typeparam>
+        </member>
+        <member name="F:SFM.Automation.QuickbooksImport.Application.Behaviors.ValidateBehavior`2.validators">
+            <summary>
+              The collection of validators for the request.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.ValidateBehavior`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Behaviors.ValidateBehavior`2"/> class.
+            </summary>
+            <param name="validators">The collection of validators for the request.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Behaviors.ValidateBehavior`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <summary>
+              Validates the current request, or throws <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/>.
+            </summary>
+            <param name="request">The request to authorize.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <param name="next">The next request in the pipeline.</param>
+            <returns>The response from the request handler.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Commands.Command">
+            <summary>
+              An abstract base command class that provides implementations of various required interfaces.
+            </summary>
+            <remarks>Inherit from this base class when the command does NOT return a response.</remarks>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Commands.Command`1">
+            <summary>
+              An abstract base command class that provides implementations of various required interfaces.
+            </summary>
+            <typeparam name="TResponse">The response type returned by the command.</typeparam>
+            <remarks>Inherit from this base class when the command returns a response.</remarks>
+        </member>
+<<<<<<< Updated upstream
+        <member name="T:SFM.Automation.QuickbooksImport.Application.InsertWorkOrder.InsertWorkOrderCommand">
+            <summary>
+              A Query to get a <see cref="T:SFM.Automation.QuickbooksImport.Data.Models.Fleetio.WorkOrder"/>.
+            </summary>
+        </member>
+=======
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommand">
+            <summary>
+              A command to Import <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objects from Fleetio API.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommandHandler">
+            <summary>
+              The handler for the <see cref="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommand"/>.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommandHandler.#ctor(SFM.Automation.QuickbooksImport.Domain.Services.IFleetioWorkOrderService)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommandHandler"/> class.
+            </summary>
+            <param name="workOrderService">The service responsible for querying <see cref="T:SFM.Automation.QuickbooksImport.Domain.Models.FleetioWorkOrder"/> objcets.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommandHandler.Handle(SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommand,System.Threading.CancellationToken)">
+            <summary>
+              The handler for the <see cref="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommand"/>.
+            </summary>
+            <param name="request">The <see cref="T:SFM.Automation.QuickbooksImport.Application.Commands.ImportFleetioWorkOrders.ImportFleetioWorkOrdersCommand"/>.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+>>>>>>> Stashed changes
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException">
+            <summary>
+              The base exception class of the application layer.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.String,System.Exception)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.Int32)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="statusCode">A status code used to further define the exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.Int32,System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="statusCode">A status code used to further define the exception.</param>
+            <param name="message">The error message that explains why the exception occurred.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="statusCode">A status code used to further define the exception.</param>
+            <param name="message">The error message that explains why the exception occurred.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException"/> class.
+            </summary>
+            <param name="info">Holds the serialized object data.</param>
+            <param name="context">Contains contextual information about the serialization.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.ClientMessage">
+            <summary>
+              Gets or sets the message returned to the client.
+            </summary>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Exceptions.BaseApplicationException.StatusCode">
+            <summary>
+              Gets or sets the exception status code.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException">
+            <summary>
+              The exception that is thrown when a command or query is invalid.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor(System.String,System.Exception)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+            <param name="validationErrors">A collection of validation error messages.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},System.Exception)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+            <param name="message">The error message that explains why the exception occurred.</param>
+            <param name="validationErrors">A collection of validation error messages.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException"/> class.
+            </summary>
+            <param name="info">Holds the serialized object data.</param>
+            <param name="context">Contains contextual information about the serialization.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Exceptions.InvalidCommandOrQueryException.ValidationErrors">
+            <summary>
+              Gets or sets the validation error messagess.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException">
+            <summary>
+              The exception that is thrown when a user is not authorized to perform an operation.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException.#ctor(System.Int32,System.String,System.String,System.Exception)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/> class.
+            </summary>
+            <param name="statusCode">The status code of the exception, which should be 401 or 403.</param>
+            <param name="userId">The immutable user id.</param>
+            <param name="message">The message that explains why the exception occurred.</param>
+            <param name="inner">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/> class.
+            </summary>
+            <param name="info">Holds the serialized object data.</param>
+            <param name="context">Contains contextual information about the serialization.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException.UserId">
+            <summary>
+              Gets or sets the user that was not authorized.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException.BecauseForbidden(System.String,System.String,System.Exception)">
+            <summary>
+              A factory method used to create an <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/> with a 403 status code.
+            </summary>
+            <param name="userId">The user that was not authorized.</param>
+            <param name="message">The exception message.</param>
+            <param name="inner">The exception that is the cause of this exception.</param>
+            <returns>Returns a <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/>.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException.BecauseNotAuthorized(System.String,System.Exception)">
+            <summary>
+              A factory method used to create an <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/> with a 401 status code.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="inner">The exception that is the cause of this exception.</param>
+            <returns>Returns a <see cref="T:SFM.Automation.QuickbooksImport.Application.Exceptions.NotAuthorizedException"/>.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase">
+            <summary>
+              An abstract base query class that provides implementations of various required interfaces.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase.#ctor(SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase"/> class.
+            </summary>
+            <param name="correlationId">A unique correlation identifier provided by the client.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase.CorrelationId">
+            <summary>
+              Gets or sets the correlation identifier for the request.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase`1">
+            <summary>
+              An abstract base query class that provides implementations of various required interfaces.
+            </summary>
+            <typeparam name="TResponse">The response type returned by the query.</typeparam>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase`1.#ctor(SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase`1"/> class.
+            </summary>
+            <param name="correlationId">A unique correlation identifier provided by the client.</param>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBaseValidator`1">
+            <summary>
+              Base validator for <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase`1"/> objects.
+            </summary>
+            <typeparam name="TQuery">An type of <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBase"/>.</typeparam>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Queries.QueryBaseValidator`1.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.QueryBaseValidator`1"/> class.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.Queries.SecureQueryBase`1">
+            <summary>
+              A query that requires authorization.
+            </summary>
+            <typeparam name="TResponse">The response type returned by the query.</typeparam>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.Queries.SecureQueryBase`1.#ctor(SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Application.Queries.SecureQueryBase`1"/> class.
+            </summary>
+            <param name="correlationId">A unique correlation identifier provided by the client.</param>
+        </member>
+        <member name="P:SFM.Automation.QuickbooksImport.Application.Queries.SecureQueryBase`1.AuthorizationData">
+            <inheritdoc/>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Application.ServiceCollectionExtensions">
+            <summary>
+              Extension methods for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> used to register dependencies with the IoC container.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Application.ServiceCollectionExtensions.AddApplicationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+              Registers all the application layer dependencies with the IoC container.
+            </summary>
+            <param name="services">The container service collection.</param>
+            <param name="configuration">The application configuration.</param>
+            <returns>The populated <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="T:SFM.Application.Commands.InsertWorkOrder.InsertWorkOrderCommandHandler">
+            <summary>
+              The handler for the <see cref="T:SFM.Automation.QuickbooksImport.Application.InsertWorkOrder.InsertWorkOrderCommand"/>.
+            </summary>
+        </member>
+        <member name="M:SFM.Application.Commands.InsertWorkOrder.InsertWorkOrderCommandHandler.#ctor(SFM.Automation.QuickbooksImport.Data.IWorkOrderService,SFM.Automation.QuickbooksImport.Domain.Repositories.IWorkOrderRepository)">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Application.Commands.InsertWorkOrder.InsertWorkOrderCommandHandler"/> class.
+            </summary>
+            <param name="workOrderService">The <see cref="T:SFM.Automation.QuickbooksImport.Data.IWorkOrderService"/>.</param>
+            <param name="workOrderRepository">The <see cref="T:SFM.Automation.QuickbooksImport.Domain.Repositories.IWorkOrderRepository"/>.</param>
+        </member>
+        <member name="M:SFM.Application.Commands.InsertWorkOrder.InsertWorkOrderCommandHandler.Handle(SFM.Automation.QuickbooksImport.Application.InsertWorkOrder.InsertWorkOrderCommand,System.Threading.CancellationToken)">
+            <summary>
+              The handler for the <see cref="T:SFM.Automation.QuickbooksImport.Application.InsertWorkOrder.InsertWorkOrderCommand"/>.
+            </summary>
+            <param name="request">The <see cref="T:SFM.Automation.QuickbooksImport.Application.InsertWorkOrder.InsertWorkOrderCommand"/>.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+            <inheritdoc/>
+        </member>
+        <member name="T:Edf.Services.Billing.Application.Validation.CorrelationIdValidator">
+            <summary>
+              Validator for <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> objects.
+            </summary>
+        </member>
+        <member name="M:Edf.Services.Billing.Application.Validation.CorrelationIdValidator.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:Edf.Services.Billing.Application.Validation.CorrelationIdValidator"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

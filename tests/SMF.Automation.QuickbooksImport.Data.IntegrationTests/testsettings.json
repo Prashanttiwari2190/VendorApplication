@@ -1,0 +1,8 @@
+﻿{
+  "connectionStrings": {
+    "DB": "Data Source=(local);Integrated Security=True;Initial Catalog=Services.Billing;Application Name=Edf.Services.Billing.IntegrationTests",
+    "LegacyDb": "Data Source=(local);Initial Catalog=Services.Billing.Legacy;Integrated Security=True;Enlist=True;MultipleActiveResultSets=True;Application Name=Edf.Services.Billing.IntegrationTests"
+  },
+
+  "RecreateDB": false
+}

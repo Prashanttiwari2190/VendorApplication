@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SFM.Automation.QuickbooksImport.Web</name>
+    </assembly>
+    <members>
+        <member name="T:SFM.Automation.QuickbooksImport.Web.Controllers.V1.WorkOrdersController">
+            <summary>
+              Handles requests pertaining to invoices.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Web.Controllers.V1.WorkOrdersController.#ctor(MediatR.IMediator,SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId,Microsoft.Extensions.Logging.ILogger{SFM.Automation.QuickbooksImport.Web.Controllers.V1.WorkOrdersController})">
+            <summary>
+              Initializes a new instance of the <see cref="T:SFM.Automation.QuickbooksImport.Web.Controllers.V1.WorkOrdersController"/> class.
+            </summary>
+            <param name="mediator">The <see cref="T:MediatR.IMediator"/> resposible for delegating requests.</param>
+            <param name="correlationId">The <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> associated with the request.</param>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger"/> used for logging.</param>
+        </member>
+<<<<<<< Updated upstream
+        <member name="T:SFM.Automation.QuickbooksImport.Web.ExecuteRequest">
+            <summary>
+              Extension method for controller.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Web.ExecuteRequest.Execute``2(Microsoft.AspNetCore.Mvc.ControllerBase,Microsoft.Extensions.Logging.ILogger{``1},System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+              Executes a command or query, with standard error handling.
+            </summary>
+            <typeparam name="TResponse">type of return object.</typeparam>
+            <typeparam name="TController">type of the controller executing this request..</typeparam>
+            <param name="controller">controller making the request.</param>
+            <param name="logger">Instance of logger from MS logging.</param>
+            <param name="action">The command or query to execute.</param>
+            <returns>The result of the command or query.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Web.ExecuteRequest.Result``1(Microsoft.AspNetCore.Mvc.ControllerBase,Microsoft.Extensions.Logging.ILogger{``0},System.Func{System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}})">
+            <summary>
+              Executes a command or query, with standard error handling.
+            </summary>
+            <typeparam name="TController">type of the controller executing this request..</typeparam>
+            <param name="controller">controller making the request.</param>
+            <param name="logger">Instance of logger from MS logging.</param>
+            <param name="action">The command or query to execute.</param>
+            <returns>The result of the command or query.</returns>
+        </member>
+=======
+>>>>>>> Stashed changes
+        <member name="M:SFM.Automation.QuickbooksImport.Web.Helper.Services.QBOApiCall(System.Action{Intuit.Ipp.Core.ServiceContext})">
+            <summary>
+              Test QBO api call.
+            </summary>
+            <param name="apiCallFunction">The function to execute.</param>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Web.Migrations.New">
+            <summary>
+              The new migration.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Web.ApplicationBuilderExtensions">
+            <summary>
+              Extensions for an <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> object.
+            </summary>
+            <summary>
+              Extensions for and <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> object.
+            </summary>
+        </member>
+        <member name="T:SFM.Automation.QuickbooksImport.Web.ServiceCollectionExtensions">
+            <summary>
+              Extensions for an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> object.
+            </summary>
+            <summary>
+              Extensions for and <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> object.
+            </summary>
+            <summary>
+              Extensions for an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> object.
+            </summary>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Web.ServiceCollectionExtensions.AddCorrelationId(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+              Adds the <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> class to the container so it can be injected.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to extend.</param>
+            <returns>Returns the <paramref name="services"/> instance.</returns>
+        </member>
+        <member name="M:SFM.Automation.QuickbooksImport.Web.ServiceCollectionExtensions.GetCorrelationId(System.IServiceProvider)">
+            <summary>
+              Creates an injectable <see cref="T:SFM.Automation.QuickbooksImport.Domain.Correlation.CorrelationId"/> by grabbing the value out of the 'gsfs-correlation-id'
+              HTTP header.
+            </summary>
+        </member>
+    </members>
+</doc>
